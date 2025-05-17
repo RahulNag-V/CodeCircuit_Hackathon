@@ -60,3 +60,7 @@ nextBtn.addEventListener('click', () => {
 
 // Initialize first slide active
 showSlide(currentIndex);
+
+//Scrolling Animation
+var copy = document.querySelector(".loop-slide").cloneNode(true);
+document.querySelector('.loop').appendChild(copy);

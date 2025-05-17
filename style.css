@@ -8,7 +8,7 @@
 
 body {
   font-family: 'Merriweather', serif;
-  background-color: #fff8f0;
+  background: linear-gradient(90deg, #0076b68a 0%, #00b4d897 100%);
   color: #333;
   transition: background-color 0.4s, color 0.4s;
 }
@@ -206,6 +206,9 @@ body.dark-mode form button {
 body.dark-mode form button:hover {
   background-color: #d48f04;
 }
+body.dark-mode .scroll-item{
+  color: white;
+}
 
 /* Welcome Section */
 #welcome {
@@ -216,6 +219,7 @@ body.dark-mode form button:hover {
   animation: backgroundSlide 30s infinite;
   background-size: cover;
   background-position: center;
+  margin-bottom: 20px;
 }
 .hero-info h1 h2 {
   background: linear-gradient(to top, #00c6ff, #0072ff); /* You can use any gradient */
@@ -316,3 +320,52 @@ article.active {
 }
 
 
+/* Infinite Scrolling Animation */
+.loop{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  padding: 35px 0;
+  white-space: nowrap;
+  background-color: rgba(0, 76, 255, 0.288);
+  position: relative;
+}
+.loop::before,
+.loop::after{
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+   content: '';
+  z-index: 2;
+}
+.loop::before{
+  left: 0;
+  background: linear-gradient(to left, #3285eb35,rgb(0, 76, 255));
+}
+.loop::after{
+  right: 0;
+  background: linear-gradient(to right, #3285eb35,rgb(0, 76, 255));
+}
+.loop:hover .loop-slide{
+  animation-play-state: paused;
+}
+.loop-slide{
+  animation: scroll 90s infinite linear ;
+  display: inline-block;
+}
+.scroll-item{
+  font-weight: 900;
+  font-size: 1.3rem;
+  font-family: lemon;
+  color: #000000;
+  margin: 0 40px;
+}
+@keyframes scroll{
+  from{
+    transform: translateX(0);
+  }
+  to{
+    transform: translateX(-100%);
+  }
+}
