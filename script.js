@@ -6,6 +6,16 @@ hamburger.addEventListener("click", () => {
   navLinks.classList.toggle("show");
 });
 
+const bookBtn = document.querySelector('.book');
+
+bookBtn.addEventListener('click', () => {
+  bookBtn.classList.add('clicked');
+  setTimeout(() => {
+    bookBtn.classList.remove('clicked');
+  }, 200);
+});
+
+
 // Dark/Light Mode Toggle
 const themeToggle = document.getElementById("themeToggle");
 

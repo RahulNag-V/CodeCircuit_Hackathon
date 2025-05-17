@@ -27,6 +27,35 @@ body {
   border-bottom: 1.5px solid black;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
+/* button */
+.book {
+  background: linear-gradient(45deg, #ff6a00, #ee0979);
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background 0.4s ease, transform 0.2s ease;
+  box-shadow: 0 4px 15px rgba(238, 9, 121, 0.6);
+}
+
+.book:hover {
+  background: linear-gradient(45deg, #ee0979, #ff6a00);
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(255, 106, 0, 0.8);
+}
+
+.book:active {
+  transform: scale(0.95);
+  box-shadow: 0 3px 10px rgba(238, 9, 121, 0.4);
+}
+.book.clicked {
+  transform: scale(0.9);
+  box-shadow: 0 2px 8px rgba(238, 9, 121, 0.7);
+}
+
 
 .logo {
   font-family: 'Lemon', cursive;
