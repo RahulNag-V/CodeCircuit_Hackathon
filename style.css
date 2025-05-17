@@ -209,6 +209,13 @@ body.dark-mode form button:hover {
 body.dark-mode .scroll-item{
   color: white;
 }
+body.dark-mode .section-title {
+  color: #fca311;
+}
+body.dark-mode .destination-card {
+  background-color: #333;
+  border-top: 3px solid #fca311;
+}
 
 /* Welcome Section */
 #welcome {
@@ -321,6 +328,7 @@ article.active {
 
 
 /* Infinite Scrolling Animation */
+
 .loop{
   margin-top: 20px;
   margin-bottom: 20px;
@@ -368,4 +376,91 @@ article.active {
   to{
     transform: translateX(-100%);
   }
+}
+
+
+/* Destination Section */
+.destination-section {
+  padding: 2rem;
+  background: #ffffff;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.destination-slider {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 1rem;
+}
+
+.destination-card {
+  flex: 0 0 auto;
+  width: auto;
+  border-radius: 15px;
+  border-top: 3px solid black;
+  overflow: hidden;
+  position: relative;
+  background-color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  scroll-snap-align: start;
+}
+
+.destination-card img {
+  width: 350px;
+  height: 550px;
+  object-fit: cover;
+  display: block;
+}
+
+.card-content {
+  padding: 1rem;
+  background: #0073ffa8;
+  color: #fff;
+  transition: max-height 0.4s ease, padding 0.3s ease;
+  max-height: 0;
+  overflow: hidden;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.destination-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgb(255, 255, 255);
+}
+
+.destination-card:hover .card-content {
+  max-height: 300px;
+  opacity: 1;
+  visibility: visible;
+}
+
+.destination-card.expanded .card-content {
+  position: static;
+  max-height: 300px;
+  opacity: 1;
+  visibility: visible;
+  background: #fff;
+}
+
+.card-content h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.2rem;
+  color: #000000;
+}
+
+.card-content p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #ffffff;
 }

@@ -61,6 +61,27 @@ nextBtn.addEventListener('click', () => {
 // Initialize first slide active
 showSlide(currentIndex);
 
+
 //Scrolling Animation
 var copy = document.querySelector(".loop-slide").cloneNode(true);
 document.querySelector('.loop').appendChild(copy);
+
+
+// Destination Section
+document.addEventListener('DOMContentLoaded', () => {
+    const cards = document.querySelectorAll('.destination-card');
+
+    cards.forEach(card => {
+      card.addEventListener('click', () => {
+        // Collapse other expanded cards
+        cards.forEach(c => {
+          if (c !== card) {
+            c.classList.remove('expanded');
+          }
+        });
+
+        // Toggle current card
+        card.classList.toggle('expanded');
+      });
+    });
+  });
