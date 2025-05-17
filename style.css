@@ -1,0 +1,109 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Lemon&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap');
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fff8f0;
+  color: #333;
+}
+
+/* Navbar Styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, #0077b6 0%, #00b4d8 100%);
+  color: black;
+  padding: 1rem 2rem;
+  position: relative;
+  border-bottom: 1.5px solid black;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  font-family: lemon, sans-serif;
+  font-weight: 900;
+  z-index: 2;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.logo span {
+  color: #fca311;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 800;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #fca311; 
+  text-decoration: underline;
+  text-decoration-color: #ffffff;
+  transition: text-decoration 0.6s ease-in;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: white;
+}
+.hamburger:hover {
+  color: #fca311; 
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    background-color: #0076b699;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 200px;
+    display: none;
+    padding: 1rem;
+    border-radius: 0 0 0 10px;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
+/* Sample Section */
+main {
+  padding: 2rem;
+  text-align: center;
+}
+
+main h1 {
+  font-size: 2rem;
+  color: #0077b6;
+  margin-bottom: 1rem;
+}
+
+main p {
+  font-size: 1.1rem;
+}
