@@ -159,3 +159,19 @@ document.addEventListener('DOMContentLoaded', () => {
 function toggleFAQ(faqItem) {
   faqItem.classList.toggle("active");
 }
+
+// contact section 
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.querySelector(".contact-form form");
+
+  form.addEventListener("submit", function () {
+    setTimeout(() => {
+      alert("Thanks! Your message has been sent to Infinite Trails.");
+    }, 500); // Slight delay to let submission complete
+  });
+});
