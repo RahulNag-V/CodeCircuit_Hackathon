@@ -96,6 +96,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+
+
+
+
+
+
+
+
+
+
+
+
   // Animate cards on scroll (optional)
   document.addEventListener('DOMContentLoaded', () => {
     const cards = document.querySelectorAll('.tour-card');
@@ -139,4 +151,5 @@ document.addEventListener('DOMContentLoaded', () => {
       card.classList.toggle('expanded');
     });
   });
-  
+  const animationContainer = document.querySelector('.testimonial-animation');
+  animationContainer.innerHTML += animationContainer.innerHTML;
