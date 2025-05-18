@@ -96,18 +96,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-
-
-
-
-
-
-
-
-
-
-
-
   // Animate cards on scroll (optional)
   document.addEventListener('DOMContentLoaded', () => {
     const cards = document.querySelectorAll('.tour-card');
