@@ -14,6 +14,8 @@ bookBtn.addEventListener('click', () => {
     bookBtn.classList.remove('clicked');
   }, 200);
 });
+
+
 // Dark/Light Mode Toggle
 const themeToggle = document.getElementById("themeToggle");
 
@@ -27,6 +29,8 @@ function setTheme(theme) {
   }
   localStorage.setItem("theme", theme);
 }
+
+// Load theme from localStorage
 const savedTheme = localStorage.getItem("theme") || "light";
 setTheme(savedTheme);
 
@@ -39,6 +43,8 @@ themeToggle.addEventListener("click", () => {
     setTheme("dark");
   }
 });
+
+
 // welcome message
 const slides = document.querySelectorAll('main article');
 const prevBtn = document.querySelector('.prev-btn');
@@ -62,8 +68,11 @@ nextBtn.addEventListener('click', () => {
   showSlide(currentIndex);
 });
 
-
+// Initialize first slide active
 showSlide(currentIndex);
+
+
+//Scrolling Animation
 var copy = document.querySelector(".loop-slide").cloneNode(true);
 document.querySelector('.loop').appendChild(copy);
 
@@ -86,6 +95,19 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   });
+
+
+
+
+
+
+
+
+
+
+
+
+
   // Animate cards on scroll (optional)
   document.addEventListener('DOMContentLoaded', () => {
     const cards = document.querySelectorAll('.tour-card');
@@ -120,7 +142,10 @@ document.addEventListener('DOMContentLoaded', () => {
   galleryItems.forEach(item => {
     observer.observe(item);
   });
-  // Gallery Card Expansion
+
+  // gallery Section
+
+   // Toggle expand on click
   document.querySelectorAll('.gallery-card').forEach(card => {
     card.addEventListener('click', () => {
       card.classList.toggle('expanded');
@@ -128,6 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   const animationContainer = document.querySelector('.testimonial-animation');
   animationContainer.innerHTML += animationContainer.innerHTML;
+
 
   // faq section
 function toggleFAQ(faqItem) {

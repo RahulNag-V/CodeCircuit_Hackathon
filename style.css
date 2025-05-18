@@ -892,7 +892,7 @@ body.dark-mode #Travelh2{
   text-align: center;
   font-size: 3rem;
   font-weight: 700;
-  color: #2c3e50;
+  color: #ffffff;
   margin-bottom: 60px;
   position: relative;
 }
@@ -921,16 +921,16 @@ body.dark-mode .blog-cards {
   background: rgba(255, 255, 255, 0.386);
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 20px 50px rgb(0, 0, 0);
+  box-shadow: 0 0 10px rgb(0, 0, 0);
   transition: all 0.4s ease;
   backdrop-filter: blur(8px);
   position: relative;
   border: 3px solid #ffffff;
 }
-body.dark-mode.blog-card {
+body.dark-mode .blog-card {
   background: rgba(255, 255, 255, 0.1);
   border: 3px solid #ffffff;
-  box-shadow: 0 20px 50px rgb(255, 255, 255);
+  box-shadow: 0 0px 10px rgb(255, 255, 255);
 }
 
 .blog-card:hover {
@@ -960,7 +960,7 @@ body.dark-mode.blog-card {
 }
 
 .blog-card:hover .blog-title {
-  color: #0077cc;
+  color: #1d2f3b;
 }
 
 .blog-date {
@@ -971,9 +971,12 @@ body.dark-mode.blog-card {
 
 .blog-summary {
   font-size: 1rem;
-  color: #444444;
+  color: #000000;
   line-height: 1.6;
   margin-bottom: 20px;
+}
+body.dark-mode .blog-summary {
+  color: #ffffff;
 }
 
 .read-more {
@@ -983,6 +986,9 @@ body.dark-mode.blog-card {
   position: relative;
   font-size: 0.95rem;
   transition: all 0.3s ease;
+}
+body.dark-mode .read-more {
+  color: #ff6a00;
 }
 
 .read-more::before {
@@ -1001,6 +1007,9 @@ body.dark-mode.blog-card {
 .read-more:hover {
   color: #005fa3;
 }
+body.dark-mode .read-more:hover {
+  color: #ff6a00;
+}
 .read-more:hover {
   text-decoration: underline;
   text-decoration-color: #0077cc;
@@ -1016,6 +1025,7 @@ body.dark-mode.blog-card {
 body.dark-mode .blogh1{
   color: #ffffff;
 }
+
 /* FAQ section */
 .faq-section {
   padding: 60px 20px;
@@ -1087,4 +1097,160 @@ body.dark-mode .faq .answer {
 .faq.active .answer {
   max-height: 200px;
   margin-top: 10px;
+}
+
+/* Service Section */
+.services-section {
+  padding: 70px 20px;
+  background: transparent ;
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+  border-bottom: 1.5px solid black;
+}
+
+.services-section .container {
+  max-width: 1200px;
+  margin: auto;
+  
+}
+
+.services-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #182f43;
+}
+body.dark-mode .services-section h2 {
+  color: #ffffff;
+}
+
+.services-section .subtitle {
+  font-size: 1.1rem;
+  color: #222222;
+  margin-bottom: 40px;
+  
+}
+body.dark-mode .services-section .subtitle {
+  color: #dcdada;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  
+}
+
+.service-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 25px 20px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 0 20px black;
+}
+body.dark-mode .service-card {
+  background: #333;
+  box-shadow: 0 0 20px white;
+  color: #ffffff;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.service-card img {
+  width: 80%;
+  height: auto;
+  border-radius: 20px;
+  margin-bottom: 15px;
+}
+
+.service-card h3 {
+  font-size: 1.25rem;
+  color: #007B7F;
+  margin-bottom: 10px;
+}
+
+.service-card p {
+  font-size: 0.95rem;
+  color: #090909;
+  line-height: 1.5;
+}
+body.dark-mode .service-card p {
+  color: #dcdada;
+}
+
+/* team Section  */
+.team-section {
+  padding: 70px 20px;
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.team-section h2 {
+  font-size: 2.5rem;
+  color: #1e3d59;
+  margin-bottom: 10px;
+}
+body.dark-mode .team-section h2 {
+  color: #ffffff;
+}
+
+.team-section .subtitle {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 50px;
+}
+body.dark-mode .team-section .subtitle {
+  color: #dcdada;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  align-items: stretch;
+}
+
+.team-card {
+  background: #f9fafba6;
+  border-radius: 16px;
+  padding: 20px;
+  border: 3px solid #ffffff;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.team-card img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 4px solid #007B7F;
+}
+
+.team-card h3 {
+  font-size: 1.3rem;
+  color: #007B7F;
+  margin-bottom: 5px;
+}
+
+.team-card .role {
+  font-size: 0.95rem;
+  color: #060c68;
+  margin-bottom: 10px;
+  font-style: italic;
+}
+
+.team-card .bio {
+  font-size: 0.9rem;
+  color: #000000;
+  line-height: 1.5;
 }
