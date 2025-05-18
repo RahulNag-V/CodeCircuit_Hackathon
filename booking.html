@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking Tour</title>
+    
+  <style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Merriweather', serif;
+  background: linear-gradient(90deg, #0076b68a 0%, #00b4d897 100%);
+  color: #333;
+  transition: background-color 0.4s, color 0.4s;
+}
+
+/* Navbar Styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, #0077b6 0%, #00b4d8 100%);
+  color: black;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1.5px solid black;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+/* button */
+.home {
+  background: linear-gradient(45deg, #ff6a00, #ee0979);
+  color: rgb(255, 255, 255);
+  border: none;
+  padding: 12px 28px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background 0.4s ease, transform 0.2s ease;
+  box-shadow: 0 4px 15px rgba(238, 9, 121, 0.6);
+}
+#home{
+  margin-top: 20px;
+}
+
+.home:hover {
+  background: linear-gradient(45deg, #ee0979, #ff6a00);
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(255, 106, 0, 0.8);
+}
+
+.home:active {
+  transform: scale(0.95);
+  box-shadow: 0 3px #ffffff, 0 10px rgba(238, 9, 121, 0.4);
+}
+.home.clicked {
+  transform: scale(0.9);
+  box-shadow: 0 2px 8px rgba(238, 9, 121, 0.7);
+}
+
+
+.logo {
+  font-family: 'Lemon', cursive;
+  font-size: 30px;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+}
+
+.logo span {
+  color: #fca311;
+}
+.navbar a{
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+/* Booking */
+.booking-section {
+  max-width: 700px;
+  margin: auto;
+  padding: 2rem;
+  background: #f5f7fa;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.booking-section h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #1e2a38;
+}
+
+form .form-group,
+form .form-row {
+  margin-bottom: 1rem;
+}
+
+.form-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+form label {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+form input,
+form select,
+form textarea {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+form button {
+  width: 100%;
+  padding: 1rem;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+form button:hover {
+  background-color: #0056b3;
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.modal-content h3 {
+  margin-bottom: 1rem;
+  color: #28a745;
+}
+
+.modal-content .close {
+  position: absolute;
+  top: 10px; right: 15px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+
+
+  </style>
+</head>
+<body>
+    <header class="navbar">
+    <div class="logo">Infinite <span>Trails</span></div> 
+
+    
+    <button class="home"><a href="index.html">Home</a></button>
+    
+  </header>
+
+<div id="confirmationModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h3>Booking Confirmed!</h3>
+    <p>Your travel booking has been successfully submitted. We’ll contact you soon!</p>
+  </div>
+</div>
+
+  <main>
+    <section class="booking-section" id="booking">
+  <h2>Book Your Journey</h2>
+  <form id="travelBookingForm" enctype="multipart/form-data">
+    <div class="form-group">
+      <label>Full Name</label>
+      <input type="text" name="fullname" required />
+    </div>
+
+    <div class="form-group">
+      <label>Email</label>
+      <input type="email" name="email" required />
+    </div>
+
+    <div class="form-group">
+      <label>Phone Number</label>
+      <input type="tel" name="phone" required />
+    </div>
+
+    <div class="form-group">
+      <label>ID Proof (Passport/Driving License)</label>
+      <input type="file" name="idproof" accept=".pdf,.jpg,.png" required />
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label>From</label>
+        <input type="text" name="from" required />
+      </div>
+
+      <div class="form-group">
+        <label>To</label>
+        <input type="text" name="to" required />
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label>Departure Date</label>
+        <input type="date" name="departure" required />
+      </div>
+
+      <div class="form-group">
+        <label>Return Date</label>
+        <input type="date" name="return" />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Transport Type</label>
+      <select name="transport" required>
+        <option value="">Select</option>
+        <option>Flight</option>
+        <option>Train</option>
+        <option>Bus</option>
+        <option>Car</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Number of Passengers</label>
+      <input type="number" name="passengers" min="1" required />
+    </div>
+
+    <div class="form-group">
+      <label>Special Requests</label>
+      <textarea name="requests" rows="3" placeholder="Allergies, meal preferences, etc."></textarea>
+    </div>
+
+    <button type="submit">Confirm Booking</button>
+  </form>
+</section>
+
+<script>
+  document.getElementById("travelBookingForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+    alert("Booking submitted successfully!");
+    // You can later connect this to a backend (Node, PHP, Firebase, etc.)
+  });
+
+  const form = document.getElementById("travelBookingForm");
+  const modal = document.getElementById("confirmationModal");
+  const closeBtn = document.querySelector(".close");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    // Optionally reset the form
+    form.reset();
+
+    // Show modal
+    modal.style.display = "block";
+  });
+
+  // Close on X button click
+  closeBtn.onclick = function () {
+    modal.style.display = "none";
+  };
+
+  // Close when clicking outside the modal
+  window.onclick = function (event) {
+    if (event.target === modal) {
+      modal.style.display = "none";
+    }
+  };
+
+
+</script>
+
+</body>
+</html>

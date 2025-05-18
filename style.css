@@ -11,7 +11,10 @@ body {
   color: #333;
   transition: background-color 0.4s, color 0.4s;
 }
-
+.book a{
+  text-decoration: none;
+  color: white;
+}
 /* Navbar Styles */
 .navbar {
   display: flex;
@@ -1511,3 +1514,10 @@ body.dark-mode #email{
 .social-icons a:hover {
   transform: scale(1.2);
 }
+
+
+
+
+
+
+
