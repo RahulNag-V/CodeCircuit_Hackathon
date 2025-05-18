@@ -96,6 +96,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+
+
+
+
+
+
+
+
+
+
+
+
   // Animate cards on scroll (optional)
   document.addEventListener('DOMContentLoaded', () => {
     const cards = document.querySelectorAll('.tour-card');
@@ -116,3 +128,27 @@ document.addEventListener('DOMContentLoaded', () => {
       observer.observe(card);
     });
   });
+  const galleryItems = document.querySelectorAll('.gallery-item');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  galleryItems.forEach(item => {
+    observer.observe(item);
+  });
+
+  // gallery Section
+
+   // Toggle expand on click
+  document.querySelectorAll('.gallery-card').forEach(card => {
+    card.addEventListener('click', () => {
+      card.classList.toggle('expanded');
+    });
+  });
+  
