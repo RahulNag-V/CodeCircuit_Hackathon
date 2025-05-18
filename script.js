@@ -43,8 +43,6 @@ themeToggle.addEventListener("click", () => {
     setTheme("dark");
   }
 });
-
-
 // welcome message
 const slides = document.querySelectorAll('main article');
 const prevBtn = document.querySelector('.prev-btn');
@@ -70,14 +68,9 @@ nextBtn.addEventListener('click', () => {
 
 // Initialize first slide active
 showSlide(currentIndex);
-
-
 //Scrolling Animation
 var copy = document.querySelector(".loop-slide").cloneNode(true);
-document.querySelector('.loop').appendChild(copy);
-
-
-// Destination Section
+document.querySelector('.loop').appendChild(copy);// Destination Section
 document.addEventListener('DOMContentLoaded', () => {
     const cards = document.querySelectorAll('.destination-card');
 
@@ -95,19 +88,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   });
-
-
-
-
-
-
-
-
-
-
-
-
-
   // Animate cards on scroll (optional)
   document.addEventListener('DOMContentLoaded', () => {
     const cards = document.querySelectorAll('.tour-card');
@@ -144,8 +124,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // gallery Section
-
-   // Toggle expand on click
   document.querySelectorAll('.gallery-card').forEach(card => {
     card.addEventListener('click', () => {
       card.classList.toggle('expanded');
@@ -161,11 +139,6 @@ function toggleFAQ(faqItem) {
 }
 
 // contact section 
-
-
-
-
-
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector(".contact-form form");
 
@@ -175,3 +148,5 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 500); // Slight delay to let submission complete
   });
 });
+
+
