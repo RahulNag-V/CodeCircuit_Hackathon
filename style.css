@@ -1016,3 +1016,75 @@ body.dark-mode.blog-card {
 body.dark-mode .blogh1{
   color: #ffffff;
 }
+/* FAQ section */
+.faq-section {
+  padding: 60px 20px;
+  background: transparent;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.faq-section .container {
+  max-width: 80%;
+  margin: 10px auto;
+  padding: 20px;
+}
+
+.faq-section h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2rem;
+  color: #005f86;
+  text-decoration: underline;
+}
+body.dark-mode .faq-section h2 {
+  color: #00b4d8;
+}
+
+.faq {
+  border-bottom: 1.5px solid #000000;
+  padding: 15px 0;
+  transition: all 0.3s ease;
+}
+body.dark-mode .faq {
+  border-bottom: 1.5px solid #ffffff;
+}
+
+.faq .question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.faq .question h3 {
+  font-size: 1.1rem;
+  color: #000000;
+}
+
+body.dark-mode .faq .question h3 {
+  color: #ffffff;
+}
+
+.faq .arrow {
+  font-size: 1.5rem;
+  transition: transform 0.3s;
+}
+
+.faq.active .arrow {
+  transform: rotate(45deg);
+}
+
+.faq .answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  color: #000000;
+}
+body.dark-mode .faq .answer {
+  color: #dcdada;
+}
+
+.faq.active .answer {
+  max-height: 200px;
+  margin-top: 10px;
+}

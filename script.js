@@ -128,3 +128,8 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   const animationContainer = document.querySelector('.testimonial-animation');
   animationContainer.innerHTML += animationContainer.innerHTML;
+
+  // faq section
+function toggleFAQ(faqItem) {
+  faqItem.classList.toggle("active");
+}
